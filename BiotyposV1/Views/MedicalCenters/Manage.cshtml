@@ -1,0 +1,25 @@
+﻿@model IEnumerable<BiotyposV1.Models.MedicalCenter>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<div class="jumbotron">
+    @if (!Model.Any())
+    {
+        /* if no customers are inserted to DB,
+             * display message of no records.
+            end*/
+
+        <text>Currently we have no record of customers.</text>
+    }
+    else
+    {
+        foreach (var temp in Model)
+        {
+            <P>name = @temp.Name</P>
+        }
+    }
+</div>

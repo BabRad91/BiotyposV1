@@ -1,0 +1,16 @@
+﻿@model IEnumerable<BiotyposV1.Models.MedicalCenter>
+
+<li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        Ιατρικά Κέντρα
+        <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+        @foreach (var temp in Model)
+        {
+            <li><a href='@Url.Action("Details", "MedicalCenters", new {id = temp.Id})'>@temp.Region</a></li>
+        }
+        <hr>
+        <li>@Html.ActionLink("Manage", "Manage", "MedicalCenters")</li>
+    </ul>
+</li>
